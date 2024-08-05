@@ -1,0 +1,19 @@
+{
+  "name": "prevent-import",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "cd ./prevent-import && cargo build-wasi --release && cd ..",
+    "prepack": "cd ./prevent-import cargo prepublish && cd .. &&  cp ./prevent-import/target/wasm32-wasi/release/prevent_import.wasm . && cd .."
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@swc/core": "^1.7.6",
+    "ts-node": "^10.9.2"
+  }
+}
